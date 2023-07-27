@@ -66,4 +66,10 @@ public class ProductServiceImpl implements ProductService{
         }
         return (List<Product>) productRepository.findAll();
     }
+
+    @Override
+    public void deleteAll() {
+        productRepository.deleteAll();
+
+    }
 }
