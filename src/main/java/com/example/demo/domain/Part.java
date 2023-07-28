@@ -29,7 +29,7 @@ public abstract class Part implements Serializable {
     double price;
     @Min(value = 0, message = "Inventory value must be positive")
     //@Max(value = 9000, message = "It's Over 9000!!!!")
-    int inv;
+    Integer inv;
 
 
     @Min(value = 1, message = "Inventory must be greater than 0")
@@ -103,11 +103,11 @@ public abstract class Part implements Serializable {
         this.price = price;
     }
 
-    public int getInv() {
+    public Integer getInv() {
         return inv;
     }
 
-    public void setInv(int inv) {
+    public void setInv(Integer inv) {
         this.inv = inv;
     }
 
