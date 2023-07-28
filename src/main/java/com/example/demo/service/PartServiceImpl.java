@@ -65,4 +65,9 @@ public class PartServiceImpl implements PartService{
         Long theIdl=(long)theId;
         partRepository.deleteById(theIdl);
     }
+
+    @Override
+    public void deleteAll(){
+            partRepository.deleteAll();
+    }
 }
