@@ -70,10 +70,10 @@ public class BootStrapData implements CommandLineRunner {
 
         //System.out.println(thePart.getCompanyName());
 
-        List<OutsourcedPart> outsourcedParts=(List<OutsourcedPart>) outsourcedPartRepository.findAll();
+/*        List<OutsourcedPart> outsourcedParts=(List<OutsourcedPart>) outsourcedPartRepository.findAll();
         for(OutsourcedPart part:outsourcedParts){
             System.out.println(part.getName()+" "+part.getCompanyName());
-        }
+        }*/
 
         Product bicycle= new Product("bicycle",100.0,15);
         Product unicycle= new Product("unicycle",100.0,15);
@@ -91,9 +91,9 @@ public class BootStrapData implements CommandLineRunner {
         }
 
         System.out.println("Started in Bootstrap");
-        System.out.println("Number of Products"+productRepository.count());
+        System.out.println("Number of Products "+productRepository.count());
         System.out.println(productRepository.findAll());
-        System.out.println("Number of Parts"+partRepository.count());
+        System.out.println("Number of Parts "+partRepository.count());
         System.out.println(partRepository.findAll());
 
     }
