@@ -17,6 +17,15 @@ String companyName;
     public OutsourcedPart() {
     }
 
+    public OutsourcedPart(long id, String name, double price, int inv, String companyName, Integer minInventory) {
+        super(id, name, price, inv, minInventory);
+        this.companyName = companyName;
+    }
+
+    public OutsourcedPart(long id, String name, double price, int inv, String companyName, Integer minInventory, Integer maxInventory) {
+        super(id, name, price, inv, minInventory, maxInventory);
+        this.companyName = companyName;
+    }
     public OutsourcedPart(long id, String name, double price, int inv, String companyName) {
         super(id, name, price, inv);
         this.companyName = companyName;

@@ -3,6 +3,7 @@ package com.example.demo.domain;
 import com.example.demo.validators.ValidDeletePart;
 
 import javax.persistence.*;
+import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import java.io.Serializable;
 import java.util.HashSet;
@@ -27,7 +28,15 @@ public abstract class Part implements Serializable {
     @Min(value = 0, message = "Price value must be positive")
     double price;
     @Min(value = 0, message = "Inventory value must be positive")
+    //@Max(value = 9000, message = "It's Over 9000!!!!")
     int inv;
+
+
+    Integer minInventory;
+
+    Integer maxInventory;
+
+
 
     @ManyToMany
     @JoinTable(name="product_part", joinColumns = @JoinColumn(name="part_id"),
@@ -35,6 +44,25 @@ public abstract class Part implements Serializable {
     Set<Product> products= new HashSet<>();
 
     public Part() {
+    }
+
+    public Part(long id, String name, double price, int inv, int minInventory) {
+        this.id = id;
+        this.name = name;
+        this.price = price;
+        this.inv = inv;
+        //this.minInventory = minInventory;
+
+
+    }
+
+    public Part(long id, String name, double price, int inv, Integer minInventory, Integer maxInventory) {
+        this.id = id;
+        this.name = name;
+        this.price = price;
+        this.inv = inv;
+        this.minInventory = minInventory;
+        this.maxInventory = maxInventory;
     }
 
     public Part(String name, double price, int inv) {
@@ -93,6 +121,15 @@ public abstract class Part implements Serializable {
     public String toString(){
         return this.name;
     }
+
+    public Integer getMinInventory() {
+        return minInventory;
+    }
+
+    public void setMinInventory(Integer minInventory) {
+        this.minInventory = minInventory;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -101,6 +138,14 @@ public abstract class Part implements Serializable {
         Part part = (Part) o;
 
         return id == part.id;
+    }
+
+    public Integer getMaxInventory() {
+        return maxInventory;
+    }
+
+    public void setMaxInventory(Integer maxInventory) {
+        this.maxInventory = maxInventory;
     }
 
     @Override
