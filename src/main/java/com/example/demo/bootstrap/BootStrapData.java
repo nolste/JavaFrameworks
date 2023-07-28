@@ -15,6 +15,8 @@ import com.example.demo.service.ProductServiceImpl;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
+import javax.validation.constraints.Null;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -40,23 +42,26 @@ public class BootStrapData implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
+        outsourcedPartRepository.deleteAll();
+        //if(outsourcedPartRepository.count()==0){
+
+            OutsourcedPart outsourcedPart1= new OutsourcedPart(1L,"bike seat",20.0,5,"Walmart", 1, 10);
+            outsourcedPartRepository.save(outsourcedPart1);
 
 
-        OutsourcedPart outsourcedPart1= new OutsourcedPart(1L,"bike seat",20.0,5,"Walmart");
-        outsourcedPartRepository.save(outsourcedPart1);
+            OutsourcedPart outsourcedPart2= new OutsourcedPart(2L,"handle bar",10.0,120,"Target",1,50);
+            outsourcedPartRepository.save(outsourcedPart2);
 
+            OutsourcedPart outsourcedPart3= new OutsourcedPart(3L,"pedal",90.0,8,"Costco",1,9000);
+            outsourcedPartRepository.save(outsourcedPart3);
 
-        OutsourcedPart outsourcedPart2= new OutsourcedPart(2L,"handle bar",10.0,120,"Target");
-        outsourcedPartRepository.save(outsourcedPart2);
+            OutsourcedPart outsourcedPart4= new OutsourcedPart(4L,"wheel set",880.0,100000,"Dollar Store",1,80);
+            outsourcedPartRepository.save(outsourcedPart4);
 
-        OutsourcedPart outsourcedPart3= new OutsourcedPart(3L,"pedal",90.0,8,"Costco");
-        outsourcedPartRepository.save(outsourcedPart3);
+            OutsourcedPart outsourcedPart5= new OutsourcedPart(5L,"grips",60.0,4,"Dollar General",1,45);
+            outsourcedPartRepository.save(outsourcedPart5);
+        //}
 
-        OutsourcedPart outsourcedPart4= new OutsourcedPart(4L,"wheel set",880.0,100000,"Dollar Store");
-        outsourcedPartRepository.save(outsourcedPart4);
-
-        OutsourcedPart outsourcedPart5= new OutsourcedPart(5L,"grips",60.0,4,"Dollar General");
-        outsourcedPartRepository.save(outsourcedPart5);
 
 
 
