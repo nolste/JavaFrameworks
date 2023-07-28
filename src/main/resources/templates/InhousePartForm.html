@@ -24,7 +24,9 @@
     <p><input type="text" th:field="*{partId}" placeholder="Part ID" class="form-control mb-4 col-4"/></p>
 
     <p><input type="text" th:field="*{minInventory}" placeholder="minInventory" class="form-control mb-4 col-4"/></p>
+    <p th:if="${#fields.hasErrors('minInventory')}" th:errors="*{minInventory}">Min Inventory Error</p>
     <p><input type="text" th:field="*{maxInventory}" placeholder="maxInventory" class="form-control mb-4 col-4"/></p>
+    <p th:if="${#fields.hasErrors('maxInventory')}" th:errors="*{maxInventory}">Max Inventory Error</p>
 
 <p><input type="submit" value="Submit" /></p>
 </form>
