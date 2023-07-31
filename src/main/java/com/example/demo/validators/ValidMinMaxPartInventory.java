@@ -13,7 +13,7 @@ import java.lang.annotation.Target;
  *
  *
  */
-@Constraint(validatedBy = {MinMaxPartInventory.class})
+@Constraint(validatedBy = {MinMaxPartInventoryValidator.class})
 @Target({ElementType.TYPE})
 @Retention(RetentionPolicy.RUNTIME)
 public @interface ValidMinMaxPartInventory {

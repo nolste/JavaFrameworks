@@ -14,7 +14,7 @@ import javax.validation.ConstraintValidatorContext;
  *
  *
  */
-public class MinMaxPartInventory implements ConstraintValidator<ValidMinMaxPartInventory, Part> {
+public class MinMaxPartInventoryValidator implements ConstraintValidator<ValidMinMaxPartInventory, Part> {
     @Autowired
     private ApplicationContext context;
 
