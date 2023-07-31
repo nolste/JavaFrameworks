@@ -17,8 +17,10 @@ public class InhousePart extends Part{
     public InhousePart() {
     }
 
-    public InhousePart(long id, String name, double price, int inv, int partId) {
+    public InhousePart(long id, String name, double price, int inv, int partId, Integer MinInventory, Integer MaxInventory) {
         super(id, name, price, inv);
+        this.minInventory=MinInventory;
+        this.maxInventory=MaxInventory;
         this.partId = partId;
     }
 
