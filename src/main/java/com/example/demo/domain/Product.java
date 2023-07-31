@@ -1,5 +1,6 @@
 package com.example.demo.domain;
 
+import com.example.demo.validators.ValidMinMaxInv;
 import com.example.demo.validators.ValidEnufParts;
 import com.example.demo.validators.ValidProductPrice;
 
@@ -19,6 +20,7 @@ import java.util.Set;
 @Table(name="Products")
 @ValidProductPrice
 @ValidEnufParts
+//@ValidMinMaxInv
 public class Product implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -27,7 +29,7 @@ public class Product implements Serializable {
     @Min(value = 0, message = "Price value must be positive")
     double price;
     @Min(value = 0, message = "Inventory value must be positive")
-    int inv;
+    Integer inv;
     @ManyToMany(cascade=CascadeType.ALL, mappedBy = "products")
     Set<Part> parts= new HashSet<>();
 
@@ -71,11 +73,11 @@ public class Product implements Serializable {
         this.price = price;
     }
 
-    public int getInv() {
+    public Integer getInv() {
         return inv;
     }
 
-    public void setInv(int inv) {
+    public void setInv(Integer inv) {
         this.inv = inv;
     }
 
