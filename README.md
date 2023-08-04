@@ -1,26 +1,82 @@
-<strong>** DO NOT DISTRIBUTE OR PUBLICLY POST SOLUTIONS TO THESE LABS. MAKE ALL FORKS OF THIS REPOSITORY WITH SOLUTION CODE PRIVATE. PLEASE REFER TO THE STUDENT CODE OF CONDUCT AND ETHICAL EXPECTATIONS FOR COLLEGE OF INFORMATION TECHNOLOGY STUDENTS FOR SPECIFICS. ** </strong>
+C.  Customize the HTML user interface for your customer’s application. The user interface should include the shop name, the product names, and the names
+of the parts.
 
-# WESTERN GOVERNOR UNIVERSITY 
-## D287 – JAVA FRAMEWORKS
-Welcome to Java Frameworks! This is an opportunity for students to implement user interfaces and learn to leverage existing frameworks, assets, and content for object-oriented programming.
-FOR SPECIFIC TASK INSTRUCTIONS AND REQUIREMENTS FOR THIS ASSESSMENT, PLEASE REFER TO THE COURSE PAGE.
-## BASIC INSTRUCTIONS
-For this project, you will use the Integrated Development Environment (IDE) link in the web links section of this assessment to install the IDE, IntelliJ IDEA (Ultimate Edition). All relevant links are on the course page. Please refer to the course of study for specific links. You will sign up for a free student license using your WGU.edu email address. Please see the “IntelliJ Ultimate Edition Instructions” attachment for instructions on how do this. Next you will download the “Inventory Management Application Template Code” provided in the web links section and open it in IntelliJ IDEA (Ultimate Edition). You will upload this project to a private external GitLab repository and backup regularly. As a part of this, you have been provided with a base code (starting point). 
+| Commit # | change                    | file                                         | line #               |
+|----------|---------------------------|----------------------------------------------|----------------------|
+| c8c25b64 | changed shop name         | src/main/resources/templates/mainscreen.html | 19                   |
+| 6bc13243 | changed button formatting | src/main/resources/templates/mainscreen.html | 17,19,20,27,29,59,61 |
 
-## SUPPLEMENTAL RESOURCES  
-1.	How to clone a project to IntelliJ using Git?
+D.  Add an “About” page to the application to describe your chosen customer’s company to web viewers and include navigation to and from the “About” page and the main screen.
 
-> Ensure that you have Git installed on your system and that IntelliJ is installed using [Toolbox](https://www.jetbrains.com/toolbox-app/). Make sure that you are using version 2022.3.2. Once this has been confirmed, click the clone button and use the 'IntelliJ IDEA (HTTPS)' button. This will open IntelliJ with a prompt to clone the proejct. Save it in a safe location for the directory and press clone. IntelliJ will prompt you for your credentials. Enter in your WGU Credentials and the project will be cloned onto your local machine.  
+| Commit # | change                     | file                                         | line #                                |
+|----------|----------------------------|----------------------------------------------|---------------------------------------|
+| 093403b1 | added about link on navbar | src/main/resources/templates/mainscreen.html | 17-28,30,74-75,77,79-80,86-87,104-105 |
+| 20aedd64 | added about page           | src/main/resources/static/about.html         | 1-35                                |
+| 20aedd64 | added about page           | src/main/resources/templates/mainscreen.html | 23                                    |
 
-2. How to create a branch and start Development?
 
-- GitLab method
-> Press the '+' button located near your branch name. In the dropdown list, press the 'New branch' button. This will allow you to create a name for your branch. Once the branch has been named, you can select 'Create Branch' to push the branch to your repository.
+E.  Add a sample inventory appropriate for your chosen store to the application. You should have five parts and five products in your sample inventory and should not overwrite existing data in the database.
 
-- IntelliJ method
-> In IntelliJ, Go to the 'Git' button on the top toolbar. Select the new branch option and create a name for the branch. Make sure checkout branch is selected and press create. You can now add a commit message and push the new branch to the local repo.
+| Commit # | change                                                 | file                                                        | line #            |
+|----------|:-------------------------------------------------------|-------------------------------------------------------------|-------------------|
+| b0756a86 | Added 5 products and 5 parts and constructors for each | src/main/java/com/example/demo/bootstrap/BootStrapData.java | 45-72,80-82,85-88 |
+| b0756a86 | Added 5 products and 5 parts and constructors for each | src/main/java/com/example/demo/domain/InhousePart.java      | 20-25             |
+| b0756a86 | Added 5 products and 5 parts and constructors for each | src/main/java/com/example/demo/domain/OutsourcedPart.java   | 25-28             |
 
-## SUPPORT
-If you need additional support, please navigate to the course page and reach out to your course instructor.
-## FUTURE USE
-Take this opportunity to create or add to a simple resume portfolio to highlight and showcase your work for future use in career search, experience, and education!
+
+
+F.  Add a “Buy Now” button to your product list. Your “Buy Now” button must meet each of the following parameters:
+
+| Commit # | change                                               | file                                                                 | line #  |
+|----------|------------------------------------------------------|----------------------------------------------------------------------|---------|
+| 805233ed | added buy now button                                 | src/main/resources/templates/mainscreen.html                         | 113-114 |
+| 594355e1 | added buy now mapping and confirmation purchase.html | src/main/java/com/example/demo/controllers/AddProductController.java | 133-145 |
+| 594355e1 | added buy now mapping and confirmation purchase.html | src/main/resources/templates/confirmationPurchase.html               | 1-22    |
+
+
+
+G. Modify the parts to track maximum and minimum inventory by doing the following:
+
+| Commit # | change                                                                                          | file                                                      | line #                |
+|----------|-------------------------------------------------------------------------------------------------|-----------------------------------------------------------|-----------------------|
+| 570a5e3c | added rows in table for min and max inventory                                                   | src/main/resources/templates/mainscreen.html              | 52-53,62-63           |
+| 26752c6b | added minInventory and maxInventory fields and created constructors                             | src/main/java/com/example/demo/domain/OutsourcedPart.java | 20-28                 |
+| 26752c6b | added minInventory and maxInventory fields and created constructors                             | src/main/java/com/example/demo/domain/Part.java           | 62-69,128-135,146-150 |
+| c961a949 | Added min/max to the InhousePartForm and OutsourcedPartForm                                     | src/main/resources/templates/InhousePartForm.html         | 26-28                 |
+| c961a949 | Added min/max to the InhousePartForm and OutsourcedPartForm                                     | src/main/resources/templates/OutsourcedPartForm.html      | 27-30                 |
+| 9ba632fc | Modified the code to enforce that the inventory is between or at the minimum and maximum value. | src/main/java/com/example/demo/domain/Part.java           | 37,39                 |
+	
+
+
+
+H. Add validation for between or at the maximum and minimum fields. The validation must include the following:
+
+| Commit # | change                                                                                                                                                    | file                                                                           | line # |
+|----------|-----------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------|--------|
+| 3daae636 | Display error messages for low inventory when adding and updating parts if the inventory is less than the minimum or greater than the max number of parts | src/main/java/com/example/demo/controllers/AddOutsourcedPartController.java    | 41-52  |
+| 3daae636 | Display error messages for low inventory when adding and updating parts if the inventory is less than the minimum or greater than the max number of parts | src/main/java/com/example/demo/domain/Part.java                                | 24     |
+| 3daae636 | Display error messages for low inventory when adding and updating parts if the inventory is less than the minimum or greater than the max number of parts | src/main/java/com/example/demo/validators/MinMaxPartInventory.java             | 1-47   |
+| 3daae636 | Display error messages for low inventory when adding and updating parts if the inventory is less than the minimum or greater than the max number of parts | src/main/java/com/example/demo/validators/ValidMinMaxPartInventory.java        | 1-23   |
+| 31ea99e2 | Display error messages for low inventory when adding and updating products lowers the part inventory below the minimum.                                   | src/main/java/com/example/demo/validators/MinMaxProductInventoryValidator.java | 1-44   |
+| 31ea99e2 | Display error messages for low inventory when adding and updating products lowers the part inventory below the minimum.                                   | src/main/java/com/example/demo/validators/ValidMinMaxInv.java                  | 1-24   |
+
+
+
+
+I.	Add at least two unit tests for the maximum and minimum fields to the PartTest class in the test package.
+
+| Commit # | change               | file                                                | line #  |
+|----------|----------------------|-----------------------------------------------------|---------|
+| 318731bf | added two unit tests | src/main/java/com/example/demo/domain/Product.java  | 23      |
+| 318731bf | added two unit tests | src/test/java/com/example/demo/domain/PartTest.java | 159-176 |
+	
+
+J.  Remove the class files for any unused validators in order to clean your code.
+
+| Commit # | change                      | file                                                               | line #     |
+|----------|-----------------------------|--------------------------------------------------------------------|------------|
+| 7b3a9dc6 | Removed deletepartvalidator | src/main/java/com/example/demo/domain/Part.java                    | 3,20       |
+| 7b3a9dc6 | Removed deletepartvalidator | src/main/java/com/example/demo/validators/DeletePartValidator.java | whole file |
+| 7b3a9dc6 | Removed deletepartvalidator | src/main/java/com/example/demo/validators/ValidDeletePart.java     | whole file |
+
+
