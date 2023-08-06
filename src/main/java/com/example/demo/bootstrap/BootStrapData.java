@@ -45,20 +45,20 @@ public class BootStrapData implements CommandLineRunner {
         outsourcedPartRepository.deleteAll();
         //if(outsourcedPartRepository.count()==0){
 
-            OutsourcedPart outsourcedPart1= new OutsourcedPart(1L,"bike seat",20.0,5,"Walmart", 1, 10);
+            OutsourcedPart outsourcedPart1= new OutsourcedPart(1L,"cpu",20.0,5,"Walmart", 1, 10);
             outsourcedPartRepository.save(outsourcedPart1);
 
 
-            OutsourcedPart outsourcedPart2= new OutsourcedPart(2L,"handle bar",10.0,120,"Target",1,50);
+            OutsourcedPart outsourcedPart2= new OutsourcedPart(2L,"gpu",10.0,120,"Target",1,50);
             outsourcedPartRepository.save(outsourcedPart2);
 
-            OutsourcedPart outsourcedPart3= new OutsourcedPart(3L,"pedal",90.0,8,"Costco",1,9000);
+            OutsourcedPart outsourcedPart3= new OutsourcedPart(3L,"ram",90.0,8,"Costco",1,9000);
             outsourcedPartRepository.save(outsourcedPart3);
 
-            OutsourcedPart outsourcedPart4= new OutsourcedPart(4L,"wheel set",880.0,100000,"Dollar Store",1,80);
+            OutsourcedPart outsourcedPart4= new OutsourcedPart(4L,"ssd",880.0,100000,"Dollar Store",1,80);
             outsourcedPartRepository.save(outsourcedPart4);
 
-            OutsourcedPart outsourcedPart5= new OutsourcedPart(5L,"grips",60.0,4,"Dollar General",1,45);
+            OutsourcedPart outsourcedPart5= new OutsourcedPart(5L,"case",60.0,4,"Dollar General",1,45);
             outsourcedPartRepository.save(outsourcedPart5);
         //}
 
@@ -80,19 +80,19 @@ public class BootStrapData implements CommandLineRunner {
             System.out.println(part.getName()+" "+part.getCompanyName());
         }*/
 
-        Product bicycle= new Product("bicycle",100.0,15);
-        Product unicycle= new Product("unicycle",100.0,15);
-        Product tricycle = new Product("tricycle", 350,8);
-        Product mountainBike = new Product("mountain bike", 10000, 3);
-        Product eBike = new Product("eBike",20000,50);
+        Product laptop= new Product("laptop",100.0,15);
+        Product desktop= new Product("desktop",100.0,15);
+        Product gamingMachine = new Product("gaming machine", 350,8);
+        Product videoEditor = new Product("video-editing pc", 10000, 3);
+        Product VR = new Product("VR-machine",20000,50);
 
 
         if(productRepository.count()==0){
-            productRepository.save(bicycle);
-            productRepository.save(unicycle);
-            productRepository.save(tricycle);
-            productRepository.save(mountainBike);
-            productRepository.save(eBike);
+            productRepository.save(laptop);
+            productRepository.save(desktop);
+            productRepository.save(gamingMachine);
+            productRepository.save(videoEditor);
+            productRepository.save(VR);
         }
 
         System.out.println("Started in Bootstrap");
