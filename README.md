@@ -11,7 +11,7 @@ of the parts.
 | 8e5b4a47 | changed shop name                          | src/main/resources/templates/confirmationdeleteproduct.html | 14                   |
 
 
-D.  Add an “About” page to the application to describe your chosen customer’s company to web viewers and include navigation to and from the “About” page and the main screen.
+D.  Add an 'About' page to the application to describe your chosen customer’s company to web viewers and include navigation to and from the “About” page and the main screen.
 
 | Commit # | change                     | file                                         | line #                                |
 |----------|----------------------------|----------------------------------------------|---------------------------------------|
