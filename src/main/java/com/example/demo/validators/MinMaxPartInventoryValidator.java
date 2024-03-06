@@ -25,6 +25,7 @@ public class MinMaxPartInventoryValidator implements ConstraintValidator<ValidMi
         ConstraintValidator.super.initialize(constraintAnnotation);
     }
 
+    //isValid function overrides a method from the superclass which is an example of polymorphism
     @Override
     public boolean isValid(Part part, ConstraintValidatorContext constraintValidatorContext) {
         if(context==null) return true;
