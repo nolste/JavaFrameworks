@@ -17,11 +17,6 @@ import java.time.LocalDate;
 public class InhousePart extends Part{
     int partId;
 
-    public void setCompanyName(String companyName) {
-        this.companyName = companyName;
-    }
-
-    String companyName;
 
     public LocalDate getDateAdded() {
         return dateAdded;
@@ -38,7 +33,7 @@ public class InhousePart extends Part{
 
     public InhousePart(long id, String name, double price, int inv, String companyName, Integer minInventory, Integer maxInventory, LocalDate dateAdded) {
         super(id, name, price, inv,minInventory,maxInventory, dateAdded);
-        this.companyName=companyName;
+
         this.minInventory=minInventory;
         this.maxInventory=maxInventory;
         this.dateAdded=dateAdded;
