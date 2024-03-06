@@ -10,6 +10,7 @@ import java.time.LocalDate;
  *
  *
  */
+//InhousePart extends Part is an example of Inheritance
 @Entity
 @DiscriminatorValue("1")
 public class InhousePart extends Part{
