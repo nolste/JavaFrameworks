@@ -32,7 +32,9 @@
         <div class="card-body">
             <h2 class="card-title">Parts Report</h2>
 
-            <br><br>
+            <br>
+            <a th:href="@{/mainscreen}" class="btn btn-primary btn-sm mb-3">Home</a>
+            <br>
 
             <table class="table table-bordered table-striped">
                 <thead class="thead-dark">
@@ -42,6 +44,7 @@
                     <th>Inventory</th>
                     <th>Min</th>
                     <th>Max</th>
+                    <th>Date Added</th>
 
                 </tr>
                 </thead>
@@ -52,6 +55,7 @@
                     <td th:text="${tempPart.inv}">1</td>
                     <td th:text="${tempPart.minInventory}">1</td>
                     <td th:text="${tempPart.maxInventory}">1</td>
+                    <td th:text="${tempPart.dateAdded}">1</td>
 
                 </tr>
                 </tbody>
