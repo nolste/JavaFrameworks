@@ -16,6 +16,7 @@ import javax.validation.ConstraintValidatorContext;
  *
  *
  */
+//This class is a validator to ensure that there are enough parts when a user creates a product
 public class EnufPartsValidator implements ConstraintValidator<ValidEnufParts, Product> {
     @Autowired
     private ApplicationContext context;
