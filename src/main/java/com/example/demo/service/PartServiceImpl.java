@@ -18,10 +18,10 @@ import java.util.Optional;
 
 @Service
 public class PartServiceImpl implements PartService{
-        private PartRepository partRepository;
+    //part repository is a private field and is only accessible within the class via public methods. This is an example of encapsulation
+    private PartRepository partRepository;
 
-        @Autowired
-
+    @Autowired
     public PartServiceImpl(PartRepository partRepository) {
         this.partRepository = partRepository;
     }
