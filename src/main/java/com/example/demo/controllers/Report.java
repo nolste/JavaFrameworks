@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.validation.Valid;
 import java.util.List;
-
+//this controller creates the get mapping for part reports
 @Controller
 public class Report {
 

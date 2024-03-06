@@ -10,7 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import java.util.List;
-
+//this controller creates the get mapping for product reports
 @Controller
 public class ProductReport {
 
