@@ -13,7 +13,17 @@ import java.time.LocalDate;
 @Entity
 @DiscriminatorValue("2")
 public class OutsourcedPart extends Part{
-String companyName;
+    String companyName;
+
+    public LocalDate getDateAdded() {
+        return dateAdded;
+    }
+
+    public void setDateAdded(LocalDate dateAdded) {
+        this.dateAdded = dateAdded;
+    }
+
+    LocalDate dateAdded;
 
     public OutsourcedPart() {
     }
@@ -26,6 +36,7 @@ String companyName;
     public OutsourcedPart(long id, String name, double price, int inv, String companyName, Integer minInventory, Integer maxInventory, LocalDate dateAdded) {
         super(id, name, price, inv, minInventory, maxInventory,dateAdded);
         this.companyName = companyName;
+        this.dateAdded = dateAdded;
     }
 /*    public OutsourcedPart(long id, String name, double price, int inv, String companyName) {
         super(id, name, price, inv);
