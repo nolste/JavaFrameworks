@@ -31,6 +31,7 @@
     <div class="card">
         <div class="card-body">
             <h2 class="card-title">Parts</h2>
+            <!-- This code below adds a search function for the parts -->
             <form th:action="@{/mainscreen}">
                 Filter: <input type="text" name="partkeyword" id="partkeyword" size="50" th:value="${partkeyword}"
                                required/>
