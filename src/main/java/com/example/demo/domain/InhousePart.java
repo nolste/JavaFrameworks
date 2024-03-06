@@ -15,14 +15,31 @@ import java.time.LocalDate;
 public class InhousePart extends Part{
     int partId;
 
+    public void setCompanyName(String companyName) {
+        this.companyName = companyName;
+    }
+
+    String companyName;
+
+    public LocalDate getDateAdded() {
+        return dateAdded;
+    }
+
+    public void setDateAdded(LocalDate dateAdded) {
+        this.dateAdded = dateAdded;
+    }
+
+    LocalDate dateAdded;
+
     public InhousePart() {
     }
 
-    public InhousePart(long id, String name, double price, int inv, int partId, Integer MinInventory, Integer MaxInventory, LocalDate dateAdded) {
-        super(id, name, price, inv,MinInventory,MaxInventory, dateAdded);
-        this.minInventory=MinInventory;
-        this.maxInventory=MaxInventory;
-        this.partId = partId;
+    public InhousePart(long id, String name, double price, int inv, String companyName, Integer minInventory, Integer maxInventory, LocalDate dateAdded) {
+        super(id, name, price, inv,minInventory,maxInventory, dateAdded);
+        this.companyName=companyName;
+        this.minInventory=minInventory;
+        this.maxInventory=maxInventory;
+        this.dateAdded=dateAdded;
     }
 
     public int getPartId() {
