@@ -16,6 +16,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
 import javax.validation.constraints.Null;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -45,20 +46,20 @@ public class BootStrapData implements CommandLineRunner {
         outsourcedPartRepository.deleteAll();
         //if(outsourcedPartRepository.count()==0){
 
-            OutsourcedPart outsourcedPart1= new OutsourcedPart(1L,"cpu",20.0,5,"Walmart", 1, 10);
+            OutsourcedPart outsourcedPart1= new OutsourcedPart(1L,"cpu",20.0,5,"Walmart", 1, 10,LocalDate.now());
             outsourcedPartRepository.save(outsourcedPart1);
 
 
-            OutsourcedPart outsourcedPart2= new OutsourcedPart(2L,"gpu",10.0,120,"Target",1,50);
+            OutsourcedPart outsourcedPart2= new OutsourcedPart(2L,"gpu",10.0,120,"Target",1,50,LocalDate.now());
             outsourcedPartRepository.save(outsourcedPart2);
 
-            OutsourcedPart outsourcedPart3= new OutsourcedPart(3L,"ram",90.0,8,"Costco",1,9000);
+            OutsourcedPart outsourcedPart3= new OutsourcedPart(3L,"ram",90.0,8,"Costco",1,9000,LocalDate.now());
             outsourcedPartRepository.save(outsourcedPart3);
 
-            OutsourcedPart outsourcedPart4= new OutsourcedPart(4L,"ssd",880.0,100000,"Dollar Store",1,80);
+            OutsourcedPart outsourcedPart4= new OutsourcedPart(4L,"ssd",880.0,100000,"Dollar Store",1,80,LocalDate.now());
             outsourcedPartRepository.save(outsourcedPart4);
 
-            OutsourcedPart outsourcedPart5= new OutsourcedPart(5L,"case",60.0,4,"Dollar General",1,45);
+            OutsourcedPart outsourcedPart5= new OutsourcedPart(5L,"case",60.0,4,"Dollar General",1,45,LocalDate.now());
             outsourcedPartRepository.save(outsourcedPart5);
         //}
 

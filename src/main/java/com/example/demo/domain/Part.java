@@ -7,6 +7,7 @@ import javax.persistence.*;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import java.io.Serializable;
+import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -39,6 +40,8 @@ public abstract class Part implements Serializable {
     @Max(value = 9000, message = "It is over 9000!!!")
     Integer maxInventory;
 
+    LocalDate dateAdded;
+
 
 
     @ManyToMany
@@ -59,13 +62,14 @@ public abstract class Part implements Serializable {
 
     }
 
-    public Part(long id, String name, double price, int inv, Integer minInventory, Integer maxInventory) {
+    public Part(long id, String name, double price, int inv, Integer minInventory, Integer maxInventory,LocalDate dateAdded) {
         this.id = id;
         this.name = name;
         this.price = price;
         this.inv = inv;
         this.minInventory = minInventory;
         this.maxInventory = maxInventory;
+        this.dateAdded = dateAdded;
     }
 
     public Part(String name, double price, int inv) {

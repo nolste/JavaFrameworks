@@ -2,6 +2,7 @@ package com.example.demo.domain;
 
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
+import java.time.LocalDate;
 
 /**
  *
@@ -17,8 +18,8 @@ public class InhousePart extends Part{
     public InhousePart() {
     }
 
-    public InhousePart(long id, String name, double price, int inv, int partId, Integer MinInventory, Integer MaxInventory) {
-        super(id, name, price, inv);
+    public InhousePart(long id, String name, double price, int inv, int partId, Integer MinInventory, Integer MaxInventory, LocalDate dateAdded) {
+        super(id, name, price, inv,MinInventory,MaxInventory, dateAdded);
         this.minInventory=MinInventory;
         this.maxInventory=MaxInventory;
         this.partId = partId;

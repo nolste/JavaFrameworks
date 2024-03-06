@@ -2,6 +2,7 @@ package com.example.demo.domain;
 
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
+import java.time.LocalDate;
 
 /**
  *
@@ -22,8 +23,8 @@ String companyName;
         this.companyName = companyName;
     }*/
 
-    public OutsourcedPart(long id, String name, double price, int inv, String companyName, Integer minInventory, Integer maxInventory) {
-        super(id, name, price, inv, minInventory, maxInventory);
+    public OutsourcedPart(long id, String name, double price, int inv, String companyName, Integer minInventory, Integer maxInventory, LocalDate dateAdded) {
+        super(id, name, price, inv, minInventory, maxInventory,dateAdded);
         this.companyName = companyName;
     }
 /*    public OutsourcedPart(long id, String name, double price, int inv, String companyName) {

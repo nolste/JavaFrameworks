@@ -7,6 +7,7 @@ import com.example.demo.validators.ValidProductPrice;
 import javax.persistence.*;
 import javax.validation.constraints.Min;
 import java.io.Serializable;
+import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -33,6 +34,16 @@ public class Product implements Serializable {
     @ManyToMany(cascade=CascadeType.ALL, mappedBy = "products")
     Set<Part> parts= new HashSet<>();
 
+    public LocalDate getDateAdded() {
+        return dateAdded;
+    }
+
+    public void setDateAdded(LocalDate dateAdded) {
+        this.dateAdded = dateAdded;
+    }
+
+    LocalDate dateAdded;
+
     public Product() {
     }
 
@@ -42,7 +53,7 @@ public class Product implements Serializable {
         this.inv = inv;
     }
 
-    public Product(long id, String name, double price, int inv) {
+    public Product(long id, String name, double price, int inv, LocalDate dateAdded) {
         this.id = id;
         this.name = name;
         this.price = price;
