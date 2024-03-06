@@ -10,6 +10,7 @@ import java.time.LocalDate;
  *
  *
  */
+//when fields are added to domains the database are automatically populated rather than manually hardcoded
 //InhousePart extends Part is an example of Inheritance
 @Entity
 @DiscriminatorValue("1")

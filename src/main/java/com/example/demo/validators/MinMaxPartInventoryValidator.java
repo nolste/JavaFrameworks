@@ -14,6 +14,8 @@ import javax.validation.ConstraintValidatorContext;
  *
  *
  */
+//this validator allows for scalability by allowing there to be checks in place regarding inventory even when the
+//application has thousands of parts. This allows end-users to have a hands-off approach of inventory, even at large scales
 public class MinMaxPartInventoryValidator implements ConstraintValidator<ValidMinMaxPartInventory, Part> {
     @Autowired
     private ApplicationContext context;
