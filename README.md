@@ -1,14 +1,13 @@
-C.  Customize the HTML user interface for your customer’s application. The user interface should include the shop name, the product names, and the names
-of the parts.
+C.  code including inheritance, polymorphism, and encapsulation
 
-| Commit # | change                                     | file                                                        | line #               |
-|----------|--------------------------------------------|-------------------------------------------------------------|----------------------|
-| 6bc13243 | changed button formatting                  | src/main/resources/templates/mainscreen.html                | 17,19,20,27,29,59,61 |
-| 8e5b4a47 | Changed references of Bike Shop to PC shop | src/main/resources/templates/mainscreen.html                | 14,19                |
-| 8e5b4a47 | changed names of parts and products        | src/main/java/com/example/demo/bootstrap/BootStrapData.java | 48-95                |
-| 8e5b4a47 | changed about page and shop name           | src/main/resources/static/about.html                        | 15,27,29             |
-| 8e5b4a47 | changed shop name                          | src/main/resources/templates/confirmationPurchase.html      | 14                   |
-| 8e5b4a47 | changed shop name                          | src/main/resources/templates/confirmationdeleteproduct.html | 14                   |
+| Commit # | change                              | file                                                                        | line #   |
+|----------|-------------------------------------|-----------------------------------------------------------------------------|----------|
+| 3108e87a | Adds inheritance                    | src/main/java/com/example/demo/domain/InhousePart.java                      | 13-16    |
+| 52bb8035 | Adds polymorphism                   | src/main/java/com/example/demo/validators/MinMaxPartInventoryValidator.java | 28-31    |
+| 8e5b4a47 | changed names of parts and products | src/main/java/com/example/demo/bootstrap/BootStrapData.java                 | 48-95    |
+| 8e5b4a47 | changed about page and shop name    | src/main/resources/static/about.html                                        | 15,27,29 |
+| 8e5b4a47 | changed shop name                   | src/main/resources/templates/confirmationPurchase.html                      | 14       |
+| 8e5b4a47 | changed shop name                   | src/main/resources/templates/confirmationdeleteproduct.html                 | 14       |
 
 
 D.  Add an 'About' page to the application to describe your chosen customer’s company to web viewers and include navigation to and from the “About” page and the main screen.

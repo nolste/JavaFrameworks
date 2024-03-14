@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.validation.Valid;
+import java.time.LocalDate;
 
 /**
  *
@@ -47,6 +48,7 @@ public class AddOutsourcedPartController {
         }
         else {
         if(op!=null)part.setProducts(op.getProducts());
+            part.setDateAdded(LocalDate.now());
             repo.save(part);
         return "confirmationaddpart";
         }

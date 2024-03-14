@@ -33,10 +33,10 @@ public class InhousePart extends Part{
 
     public InhousePart(long id, String name, double price, int inv, String companyName, Integer minInventory, Integer maxInventory, LocalDate dateAdded) {
         super(id, name, price, inv,minInventory,maxInventory, dateAdded);
-
+        LocalDate currentTime = LocalDate.now();
         this.minInventory=minInventory;
         this.maxInventory=maxInventory;
-        this.dateAdded=dateAdded;
+        this.dateAdded=currentTime;
     }
 
     public int getPartId() {

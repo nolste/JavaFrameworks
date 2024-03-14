@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.validation.Valid;
+import java.time.LocalDate;
 
 /**
  *
@@ -46,6 +47,7 @@ public class AddInhousePartController{
         InhousePartService repo=context.getBean(InhousePartServiceImpl.class);
         InhousePart ip=repo.findById((int)part.getId());
         if(ip!=null)part.setProducts(ip.getProducts());
+            part.setDateAdded(LocalDate.now());
             repo.save(part);
 
         return "confirmationaddpart";}

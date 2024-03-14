@@ -14,6 +14,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -80,9 +81,10 @@ public class AddProductController {
                     }
                 }
             }
-            else{
-                product.setInv(0);
-            }
+            //else{
+                //product.setInv(0);
+           // }
+            product.setDateAdded(LocalDate.now());
             repo.save(product);
             return "confirmationaddproduct";
         }
