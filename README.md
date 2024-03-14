@@ -1,4 +1,4 @@
-# SpringBoot Web Application Readme
+# Nolan's PC Parts Readme
 ## Overview
 
 This repository contains a SpringBoot web application developed to create a web application for a PC parts store.
